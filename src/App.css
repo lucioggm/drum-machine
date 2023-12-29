@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+:root {
+  --back-color: #705c8e;
+  --selected: #d46a6a;
+  --noselected: #3b424f;
+  --background-button: #4a575d;
+  --display-back: #2e333a;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#drum-machine {
+  border: 3px solid var(--selected);
+  padding: 10px;
+  width: 450px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: var(--back-color);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  text-align: center;
+  width: 100%;
+  color: var(--selected);
+  font-size: 24px;
+  text-shadow: 2px 2px 4px var(--noselected);
+}
+
+.drum-pad {
+  width: 30%;
+  height: 70px;
+  background: var(--background-button);
+  color: var(--noselected);
+  border: 2px solid var(--noselected);
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 50px;
+  margin-bottom: 20px;
+  border: 2px solid var(--noselected);
+  background: var(--display-back);
+  color: var(--selected);
+  border-radius: 10px;
+}
+
+
+.drum-pad.active {
+  background-color: #d46a6a;
   color: white;
+  border: 2px solid #3b424f;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
